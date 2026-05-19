@@ -53,8 +53,8 @@ def _get_data():
 
 def _final_validate(_):
     variant = get_esp32_variant()
-    if variant != VARIANT_ESP32S3:
-        raise cv.Invalid(f"i2s_tdm_audio only supports ESP32-S3, got {variant}")
+    if variant != VARIANT_ESP32S3 && variant != VARIANT_ESP32P4 :
+        raise cv.Invalid(f"i2s_tdm_audio only supports ESP32-S3 and ESP32-P4, got {variant}")
 
 
 FINAL_VALIDATE_SCHEMA = _final_validate
